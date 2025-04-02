@@ -1,6 +1,8 @@
 import streamlit as st
 import os
 from google import genai
+from google.genai import types
+from google.genai.types import GenerateContentConfig
 from fuzzywuzzy import fuzz
 from docx import Document
 
@@ -130,18 +132,35 @@ def is_greeting(user_input):
             return True
     return False
 
-def generate_response(query, context=""):
-    prompt = f"""
-    Context: {context}
-    Question: {query}
+def generate_response(query, is_first_message=False):
+    if 'chat_session' not in st.session_state:
+        st.session_state.chat_session = client.chats.create(
+            model="gemini-2.0-flash",
+            config=types.GenerateContentConfig(
+                system_instruction="""You are Music Blocks Assistant, an expert in music education.
 
-    Only return the helpful answer below and nothing else.
-    Helpful answer:
-    """
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=prompt
-    )
+Your primary role is to help teachers and students work with Music Blocks, a programming environment that helps young people explore musical concepts through coding.
+
+When responding:
+- Provide clear, age-appropriate explanations about musical concepts
+- Suggest engaging coding activities that connect programming with musical exploration
+- Create structured lesson plans when requested, including learning objectives, materials needed, step-by-step activities, and assessment strategies
+- Include examples of how to implement musical ideas using code blocks
+- Be encouraging and foster a growth mindset toward both music and programming
+- Reference the provided documentation to ensure accuracy in your responses
+- Maintain memory of the entire conversation history, referring back to previous exchanges when relevant
+
+Always maintain a supportive, enthusiastic tone that inspires creativity at the intersection of music and technology."""
+            )
+        )
+        
+        if is_first_message and hasattr(st.session_state, 'guide_context'):
+            st.session_state.chat_session.send_message(
+                f"Here is the Music Blocks documentation to reference when answering questions:\n\n{st.session_state.guide_context}\n\nPlease use this documentation to help answer user questions accurately."
+            )
+    
+    response = st.session_state.chat_session.send_message(query)
+    
     return response.text
 
 def save_response_to_docx(response, topic):
@@ -161,9 +180,12 @@ if 'lesson_plan' not in st.session_state:
     st.session_state.lesson_plan = ""
 if 'topic' not in st.session_state:
     st.session_state.topic = ""
+if 'is_first_message' not in st.session_state:
+    st.session_state.is_first_message = True
 
 with open("guide.md", "r") as guide_file:
     guide_context = guide_file.read()
+    st.session_state.guide_context = guide_context
 
 with st.expander("🎵 About Music Blocks Assistant", expanded=True):
     st.markdown("""
@@ -201,7 +223,9 @@ if prompt:
     elif is_greeting(prompt):
         response = "Hello! How can I assist you today?"
     else:
-        response = generate_response(prompt, guide_context)
+        response = generate_response(prompt, st.session_state.is_first_message)
+        if st.session_state.is_first_message:
+            st.session_state.is_first_message = False
     
     with st.chat_message("assistant"):
         st.markdown(response)
