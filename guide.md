@@ -1,3 +1,657 @@
+# Using Music Blocks
+
+Music Blocks is a fork of [Turtle
+Blocks](href="https://turtle.sugarlabs.org). It has extensions for
+exploring music: pitch and rhythm.
+
+Music Blocks is designed to run in a browser. Most of the development
+has been done in Chrome.
+
+| Browser | Comments                  |
+| ------- | ------------------------- |
+| Chrome  | Supported                 |
+| Safari  | Supported                 |
+| Firefox | Supported                 |
+| Opera   | Supported                 |
+| IE      | Not supported             |
+| Edge    | Recent versions supported |
+
+You can run it from
+[https://musicblocks.sugarlabs.org](https://musicblocks.sugarlabs.org).
+
+![alt tag](./getting-started.png "Music Blocks in a browser")
+
+## <a>TABLE OF CONTENTS</a>
+
+1. [Getting Started](#1-getting-started)
+2. [Toolbars](#2-toolbars)
+   1. [Main Toolbar](#1-main-toolbar)
+   2. [Secondary Toolbar](#2-secondary-toolbar)
+3. [Context Menus](#3-context-menus)
+   1. [Contextual Menu for Blocks](#1-contextual-menu-for-blocks)
+   2. [Contextual Menu for Background](#2-contextual-menu-for-background)
+   3. [Pie Menus](#3-pie-menus)
+4. [Keyboard Shortcuts Guide](#4-keyboard-shortcuts-guide)
+   1. [General Shortcuts](#1-general-shortcuts)
+   2. [Navigation Shortcuts](#2-navigation-shortcuts)
+   3. [Music Note Creation](#3-music-note-creation)
+   4. [Special Block Manipulations](#4-special-block-manipulations)
+5. [Block Palettes](#5-block-palettes)
+   1. [Defining a Note](#1-defining-a-note)
+   2. [A Quick Tour of Selected Blocks](#2-a-quick-tour-of-selected-blocks)
+6. [Flow Palette](#6-flow-palette)
+7. [Widget Palette](#7-widget-palette)
+8. [Stats](#8-stats)
+9. [Planet View](#9-planet-view)
+
+## <a>1. Getting Started</a>
+
+[Back to Table of Contents](#table-of-contents)
+
+![Default blocks](./getting_started_blocks.svg "default blocks")
+
+When you first launch Music Blocks in your browser, you'll see a stack
+of blocks representing the notes: `Sol 4`, `Mi 4`and `Sol 4`. The first two notes are `1/4` note; third note is
+`1/2` note. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1731947644713000&run=True)
+
+![The Play button](./play.png "play button")
+
+Try clicking on the _Start_ block or click on the _Play_ button. You
+should hear the notes play in succession: `Sol` `Mi` `Sol`.
+
+To write your own programs, drag blocks from their respective palettes
+on the left side of the screen. Use multiple blocks in stack(s) to
+create music and drawings; as the mouse moves under your control,
+colorful lines are drawn and music of your creation is played.
+
+Note that blocks either snap together vertically or
+horizontally. Vertical connections indicate program (and temporal)
+flow. Code is executed from the top to bottom of a stack of
+blocks. Horizontal connections are used for parameters and arguments,
+e.g., the name of a pitch, the duration of a note, the numerator and
+denominator of a division. From the shape of the block, it should be
+apparent whether they connect vertically or horizontally.
+
+Some blocks, referred to as "clamp" blocks have an
+interior&mdash;child&mdash;flow. This might be code that is run _if_ a
+condition is true, or, more common, the code that is run over the
+duration of a note.
+
+For the most part, any combination of blocks will run (although there
+is no guarantee that they will produce music). Illegal combinations
+of blocks will be flag by a warning on the screen as the program runs.
+
+You can delete a block by dragging it back into the trash area that
+appear at the bottom of the screen.
+
+To maximize screen real estate, Music Blocks overlays the program
+elements (stacks of blocks) on top of the canvas. These blocks can be
+hidden at any time while running the program.
+
+## <a>2. Toolbars</a>
+
+[Back to Table of Contents](#table-of-contents)
+
+There are five toolbars in Music Blocks, each serving a specific purpose to help you navigate and interact with the application. Below is a detailed description of each toolbar along with images to visually illustrate their functions:
+
+### 1. Main Toolbar
+
+The **Main** toolbar is located across the top of the screen. It contains several essential buttons for managing your project, controlling playback, and accessing various settings.
+
+- **Play Button**: Starts playing the project.
+- **Stop Button**: Stops the current project playback.
+- **Fullscreen Button**: Toggles fullscreen mode on or off.
+- **New Project Button**: Creates a new project from scratch.
+- **Load Project from File Button**: Opens an existing project file.
+- **Save Project Button**: Saves the current project.
+- **Find and Share Project Button**: Opens the Planet view where you can explore and share projects with the community.
+- **Auxiliary Menu**: Provides additional tools for project settings and configuration.
+- **Help Button**: Opens the help menu, providing access to instructions and guidance.
+
+---
+
+### 2. Secondary Toolbar
+
+The **Secondary** toolbar appears when you click the **hamburger button** (three horizontal lines) in the main toolbar. This toolbar provides several options to control the execution of your project and adjust your work environment.
+
+- **Run Slowly**: Executes the program slowly to allow you to follow the process step by step.
+- **Run Step by Step**: Runs the program one step at a time, ideal for debugging and analysis.
+- **Change theme**: Switch between light and dark mode for a customized workspace.
+- **Merge with Current Project**: Combines the current project with another, promoting collaboration and reusability.
+- **Turtle Wrap**: Enables wrapping of the turtle's position to seamlessly continue from the opposite edge of the canvas.
+- **Set Pitch Preview**: Lets users preview pitches while composing, providing instant feedback.
+- **Restore**: Resets changes and restores the project to its last saved state
+- **Switch to Advanced Mode**: Quickly transition from Beginner to Advanced mode for more tools and customization options.
+  <h4>These are the extra options you get when you access the advanced mode:</h4> 1. _Display Statistics_: Provides insights into project performance, such as usage and execution metrics.<br> 2. _Load Plugin_: Integrates external plugins to enhance functionality and extend features.<br> 3. _Delete Plugin_: Allows the removal of plugins that are no longer needed.<br> 4. _Horizontal Scrolling_: Enables horizontal navigation for easier handling of large projects.<br> 5. _JavaScript Editor_: Includes an editor for writing and embedding custom JavaScript code.<br> 6. _Record_: Adds a "Record" button to the main palette, enabling users to record their compositions directly (Not supported on Firefox and Safari browsers).
+
+- **Select Language**: Offers a multilingual interface, allowing users to change the language as per their preference.
+
+---
+
+### 3. Palette Toolbar
+
+The **Palette** toolbar is located on the left side of the screen. It contains various categories of blocks, such as numbers, media, and actions, which you can drag and drop onto the canvas to build your project.
+
+The palette is dynamic, switching between different categories based on your selection. When you hover over the palette, it reveals the specific blocks related to your chosen category.
+
+---
+
+### 4. Canvas Toolbar (Upper Right)
+
+On the upper right of the canvas is a small toolbar with options for managing the workspace. It allows you to adjust the display and clear the canvas.
+
+- **Show Grids**: Displays a grid overlay on the canvas for alignment and organization.
+- **Clear Screen**: Clears the entire canvas, removing all blocks and drawings.
+- **Toggle Display Size**: Adjusts the size of the canvas or blocks for a better viewing experience.
+
+---
+
+### 5. Canvas Toolbar (Lower Right)
+
+Located at the lower right of the canvas, this small toolbar provides additional control over block visibility and size.
+
+- **Home Button**: Takes you back to the initial view or project start screen.
+- **Show/Hide Blocks**: Toggles the visibility of the blocks you’ve added to the canvas.
+- **Expand/Collapse Blocks**: Allows you to expand or collapse the view of blocks for better organization.
+- **Decrease/Increase Block Size**: Changes the size of the blocks on the canvas to suit your preference.
+
+---
+
+## <a>3. Context Menus</a>
+
+[Back to Table of Contents](#table-of-contents)
+
+Context menus are an important part of user interfaces that provide users with quick access to a set of actions relevant to the context in which they are working.The right-click context menu in Music Blocks provides several options for working with blocks and the workspace. To access the right-click context menu, simply right-click anywhere in the workspace.
+
+### <a>1. Contextual Menu for Blocks:</a>
+
+When you **right-click on a block**, the following options are available:
+
+![Right-click context menu](./block_context.png "Right-click context menu")
+
+**Extract**: The Extract option allows you to break down a nested block into its individual components or sub-blocks. This is useful for isolating parts of a block that you want to modify or reuse in other sections of your project, without affecting the original structure. It simplifies the process of working with complex, multi-layered blocks.
+
+![Extract the selected block](./extract.png "Extract the selected block")
+
+**Move to Trash**: The Move to Trash option deletes the selected block by sending it to the trash. This action removes the block from your workspace, is a way of cleaning up the environment or removing blocks you no longer need.
+
+![Delete](./delete.png "Delete")
+
+**Duplicate**: The Duplicate option creates an exact copy of the selected block. This is especially helpful for reusing blocks with the same configurations or settings in multiple places in your project, saving time and effort in recreating similar blocks.
+
+![Duplicate](./duplicate.png "Duplicate")
+
+**Help**: The Help option displays a detailed help screen for the selected block. This screen provides valuable information about the block’s functionality, purpose, and usage instructions, making it easier for users to understand and effectively incorporate the block into their projects. Additionally, the help screen allows you to insert blocks from the help examples directly into your program by clicking on the download icon (labeled "Load this block" in the image below).
+
+![Help](./help.png "Help")
+
+**Close**: The Close option exits the context menu, allowing you to return to your workspace without making any changes or selections. This is useful for dismissing the menu if you opened it by mistake or decided not to perform any action.
+
+By using the right-click context menu in Music Blocks, you can quickly perform common tasks and manipulate blocks on the workspace. This can help you to work more efficiently and effectively in your projects.
+
+### <a>2. Contextual Menu for Background:</a>
+
+When you **right-click on the background**, the following options are available:
+
+![Context-Menu-For-Workspace](./context-menu-workspace.png "Context Menu for Workspace")
+
+- **Grid**: Toggles the display of a grid in the workspace for better alignment and organization.
+- **Set Pitch Preview**: Adjusts and previews pitches while working on a composition.
+- **Enable Horizontal Scrolling**: Allows horizontal navigation for easier management of large projects.
+- **Turtle Wrap Off**: Toggles the turtle wrap feature, which determines whether the turtle wraps around the canvas edges.
+- **Restore**: Reverts the workspace to its last saved state.
+- **Increase Block Size**: Enlarges the size of all blocks for better visibility.
+- **Decrease Block Size**: Shrinks the size of all blocks to save space.
+- **Expand/Collapse Block**: Expands or collapses individual blocks to show or hide their details.
+- **Show/Hide Block**: Toggles the visibility of selected blocks in the workspace.
+- **Home**: Centers the workspace view on the initial starting point.
+- **Close**: Exits the contextual menu.
+- **Search for Blocks**: Opens a search bar to locate specific blocks within the workspace.
+- **Collapse**: Collapses all blocks to their minimal state.
+- **Clean**: Organizes and tidies up the workspace by aligning blocks systematically.
+- **Select**: Enables selection mode for selecting multiple blocks or elements in the workspace.
+
+### <a>3. Pie Menus </a>
+
+Many blocks in Music Blocks also feature "pie menus" that allow you to change block parameters quickly by selecting options from a circular menu that appears when you hover over the block.
+
+For further details on how to use these toolbars effectively, you can refer to the [Turtle Blocks Documentation](https://github.com/sugarlabs/turtleblocksjs/tree/master/documentation).
+
+---
+
+## 4. Keyboard Shortcuts Guide
+
+[Back to Table of Contents](#table-of-contents)
+
+### 1. General Shortcuts
+
+| Key Combination (Windows) | Key Combination (Mac)    | Description                                                  |
+| ------------------------- | ------------------------ | ------------------------------------------------------------ |
+| `Alt + B`                 | `Option + B`             | Save the current block artwork.                              |
+| `Alt + C`                 | `Option + C`             | Copy the selected blocks.                                    |
+| `Alt + E`                 | `Option + E`             | Clear all elements.                                          |
+| `Alt + R` or `Enter`      | `Option + R` or `Return` | Play the project. Activates the play button.                 |
+| `Alt + S`                 | `Option + S`             | Stop all running processes (e.g., turtles).                  |
+| `Alt + H`                 | `Option + H`             | Save help blocks - Generate and save artwork for each block. |
+| `Ctrl + V`                | `Command + V`            | Open the paste box.                                          |
+| `Space`                   | `Space`                  | Toggle the zoom level of the stage.                          |
+| `ESC`                     | `ESC`                    | Hide widgets or stop ongoing processes.                      |
+
+### 2. Navigation Shortcuts
+
+| Key (Windows) | Key (Mac)          | Description                                                 |
+| ------------- | ------------------ | ----------------------------------------------------------- |
+| `HOME`        | `Fn + Left Arrow`  | Jump to the home position for blocks or palettes.           |
+| `END`         | `Fn + Right Arrow` | Scroll to the bottom of the page.                           |
+| `PAGE UP`     | `Fn + Up Arrow`    | Scroll up by half the screen height.                        |
+| `PAGE DOWN`   | `Fn + Down Arrow`  | Scroll down by half the screen height.                      |
+| `Arrow Up`    | `Arrow Up`         | Move the active block or scroll up.                         |
+| `Arrow Down`  | `Arrow Down`       | Move the active block or scroll down.                       |
+| `Arrow Left`  | `Arrow Left`       | Move the active block or scroll left (In Horizontal mode).  |
+| `Arrow Right` | `Arrow Right`      | Move the active block or scroll right (In Horizontal mode). |
+
+### 3. Music Note Creation
+
+| Key (Windows) | Key (Mac) | Description          |
+| ------------- | --------- | -------------------- |
+| `D`           | `D`       | Create a "Do" note.  |
+| `R`           | `R`       | Create a "Re" note.  |
+| `M`           | `M`       | Create a "Mi" note.  |
+| `F`           | `F`       | Create a "Fa" note.  |
+| `S`           | `S`       | Create a "Sol" note. |
+| `L`           | `L`       | Create a "La" note.  |
+| `T`           | `T`       | Create a "Ti" note.  |
+
+### 4. Special Block Manipulations
+
+| Key (Windows) | Key (Mac) | Description                                                |
+| ------------- | --------- | ---------------------------------------------------------- |
+| `/`           | `/`       | Scroll blocks container to the right (In Horizontal mode). |
+| `\`           | `\`       | Scroll blocks container to the left (In Horizontal mode).  |
+| `DEL`         | `Delete`  | Extract the selected block.                                |
+
+## 5. Block Palettes
+
+[Back to Table of Contents](#table-of-contents)
+
+The block palettes are displayed on the left side of the screen. These
+palettes contain the blocks used to create programs.
+
+Looking for a block? Find it in the [Palette
+Tables](https://github.com/sugarlabs/musicblocks/blob/master/guide/README.md#APPENDIX_1).
+
+See the
+[Turtle Blocks Programming Guide](http://github.com/sugarlabs/turtleblocksjs/tree/master/guide/README.md)
+for general details on how to use the blocks.
+
+See the
+[Music Blocks Programming Guide](http://github.com/sugarlabs/musicblocks/tree/master/guide/README.md)
+for details specific to music: _Rhythm_, _Meter_, _Pitch_, _Intervals_,
+_Tone_, _Ornament_, _Volume_, _Drum_, and _Widget_.
+
+All of the other palettes are described in the
+[Turtle Blocks documentation pages](http://github.com/sugarlabs/turtleblocksjs/tree/master/documentation).
+
+### 1. Defining a note
+
+![The Note Block](./newnote_block.svg "the note")
+
+At the heart of Music Blocks is the concept of a note. A note, defined
+by the _Note value_ block defines a length of time and a set of
+actions to occur in that time. Typically the action is to play a
+pitch, or series of pitches (e.g., a chord). Whatever blocks are placed
+inside the "clamp" of a _Note value_ block are played over the
+duration of the note.
+
+The duration of a note is determined by its note value. By default, we
+use musical notation, referring to whole notes (`1`), half notes
+(`1/2`), quarter notes (`1/4`), etc., but you can use any number as
+the note duration. (There are some practical limitations, which you
+can discover through experimentation.) The relative length of a
+quarter note is half as long as a half note. By default, Music Blocks
+will play 90 quarter notes per second, so each quarter note is `2/3`
+seconds (`666` microseconds) in duration.
+
+The _Pitch_ block (found on the Pitch Palette) is used to specify the
+pitch of a note. By default, we use traditional western Solfege, i.e.,
+`Do`, `Re`, `Mi`, `Fa`, `Sol`, `La`, `Ti`, where `Do` is mapped to
+`C`, `Re` is mapped to `D`, etc. (when the key and mode are `C
+Major`). You can also specify pitch by using a note name, e.g.,
+`F#`. An octave specification is also required (as an argument for our
+pitch block) and changes integers for every cycle of `C` (i.e. `C4` is
+higher than B3). When used with the _Pitch-time Matrix_ block, a row
+is created for each _Pitch_ block.
+
+In addition to specifying the note name, you must also specify an
+octave. The frequency of a note doubles as the octave increases. `A2` is
+`110 Hertz`; `A3` is `220 Hertz`; `A4` is `440 Hertz`; etc.
+
+Two special blocks can be used with a _Pitch_ block to specify the
+name of the pitch: the _Solfege_ block and the _Pitch-Name_ block. The
+_Solfege_ block uses selectors to scroll through `Do`, `Re`, `Mi`,
+`Fa`, `Sol`, `La`, and `Ti`. A second selector is used for sharps and
+flats: `##`, `#`, `and`. The _Pitch-Name_ block is similar
+in that it lets you scroll through `C`, `D`, `E`, `F`, `G`, `A`,
+`B`. It also uses a second selector for sharps and flats.
+
+As noted, and described in more detail in the
+[Music Blocks Programming Guide](http://github.com/sugarlabs/musicblocks/tree/master/guide/README.md),
+you can put as many _Pitch_ blocks inside a note as you'd like. They
+will play together as a chord. You can also insert graphics blocks
+inside a note in order to create sound-sync animations.
+
+### 2. A quick tour of selected blocks
+
+![The Set Instrument block](./settimbre_block.svg "Set instrument block")
+
+The _Set instrument_ block, found on the _Tone_ palette, lets you choose a
+timbre for a note. In the above example, a guitar model is used to
+make any notes contained within the block's clamp will sound as if
+they are being played on a guitar. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1731948356610795&run=True)
+
+![The Set Volume block](./setsynthvolume_block.svg "Set synth volume")
+
+The _Set synth volume_ block, found on the _Volume_ palette, lets you
+change the volume, which ranges from `0` (silent) to `100` (full
+volume), of any notes contained with the block's clamp.
+
+![The Set Drum block](./setdrum_block.svg "Set drum block")
+
+The _Set drum_ block, which is used inside of the clamp of a _Note
+value_ block is used to add drum sounds to a note. It is found on the
+_Drum_ palette. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732000719242159&run=True)
+
+![The Repeat block](./repeat_block.svg "Repeat Block")
+
+The _Repeat_ block, found on the _Flow_ palette, is used to create
+loops. Whatever stack of blocks are placed inside its clamp will be
+repeated. It can be used to repeat individual notes, or entire phrases
+of music. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732003682836455&run=True)
+
+![The Duplicate block](./duplicatenotes_block.svg "Duplicate Block")
+
+The _Duplicate_ block, found on the _Rhythms_ palette, is used to
+repeat any contained notes. Similar to using a _Repeat_ block, but
+rather than repeating a sequence of notes multiple times, each note is
+repeated in turn, e.g. duplicate x2 of `4 4 8` would result in `4 4 4
+4 8 8`, where as repeat x2 of `4 4 8` would result in `4 4 8 4 4 8`. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732003870740637&run=True)
+
+The _Start_ block, found on the _Action_ palette, is tied to the _Run_
+button. Anything inside of the clamp of the _Start_ button will be run
+when the button is pressed. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732004679481517&run=True)
+
+![The Start block](./multiple_start_blocks.svg "Start Block")
+
+Note that you can have multiple mice and that each mouse is
+equivalent to a "voice" in music. It can play notes of various pitches
+in sequence, and can even play multiple notes of the same "note
+value", but no one mouse can do counterpoint by itself&mdash;just like
+one mouse cannot draw two lines at the same time. If you want
+counterpoint, pull out an additional _Start_ block, which will create
+a new mouse that can now perform a new voice.
+
+![The Action block](./action_block.svg "Action-Chunk")
+
+The _Action_ block, also found on the _Action_ palette, is used to
+create a collection of blocks that can be run as a group. Whenever you
+create an _Action_ block, a new block corresponding to that action is
+added to the palette. The name given to the action is the name
+associated with the new block. (It is common practice to use _Action_
+blocks to define short phrases of music that can be repeated and
+modified.) [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732004679481517&run=True)
+
+Actions are a powerful organizational element for your program and can
+be used in many powerful ways, e.g., an action can be associated with
+an event, such as an on beat or off beat or mouse click. See
+[Music Blocks Programming Guide](http://github.com/sugarlabs/musicblocks/tree/master/guide/README.md),
+for further details and examples.
+
+![The Storein Box block](./storebox1_block.svg "Store in box & Add 1 to Block")
+
+The _Store in_ block, found on the _Boxes_ palette, is used to store a
+value. That value can be retrieved using the _Box_ block. The value
+can be modified using the _Add one_ block. These blocks are the
+typical way in which variables are stored and retrieved in Music
+Blocks. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732020971700880&run=True)
+
+![Forward](./forward_block.svg "Forward Block")
+
+The _Forward_ block, found on the _Graphics/Mouse_ palette, is used to draw
+straight lines. (Note that if this block is used inside of a _Note
+value_ block&mdash;the line will be drawn as the note plays; otherwise
+the line is drawn "instantly".) [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1730651293282088&run=True)
+
+![Right](./left_block.svg "Right/Left Block")
+
+The _Right/Left_ block, found on the _Graphics/Mouse_ palette, is used to rotate the
+mouse heading. (Note that if this block is used inside of a _Note
+value_ block&mdash;the heading will change as the note plays;
+otherwise the heading is changed "instantly".) [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732023891064703&run=True)
+
+![Pen Up](./mousebutton_block.svg "Pen up and Pen down Block")
+
+The _Pen up_ and _Pen down_ blocks, found on the _Pen_ palette,
+determine whether or not the mouse draws as it moves. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732030390164543&run=True)
+
+![Set Shade](./setshade_block.svg "Set shade Block")
+
+The _Set shade_ block, also found on the _Pen_ palette, is used to set
+the lightness or darkness of the "ink" used in the mouse pen. `set
+shade 0` is black. `set shade 100` is white. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732096229605656&run=True)
+
+![Set Color](./setcolor_block.svg "Set color Block")
+
+The _Set color_ block, also found on the _Pen_ palette, is used to set
+the color of the "ink" used in the mouse pen. `set color 0` is
+red. `set color 70` is blue. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732096675098636&run=True)
+
+![Random](./random_block.svg "Random Block")
+
+The _Random_ block, found on the _Numbers_ palette, is used to
+generate a random number, because sometimes being unpredictable is
+nice. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732097168390186&run=True)
+
+![One of This or That](./oneOf_block.svg "One of this or that Block")
+
+The _One of_ block, also found on the _Numbers_ palette, is used to
+generate a binary choice, one of "this" or "that", because sometimes
+being unpredictable is nice. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732113139904914&run=True)
+
+![alt tag](./show_block.svg "Show media Block")
+
+The _Show_ block, found on the _Media_ palette, is used to display
+text and images. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732117445989018&run=True)
+
+![Mouse Button](./mousebutton_block.svg "Mouse button Block")
+
+The _Mouse button_ block, found on the _Sensors_ palette, returns true
+if the mouse button is clicked. The mouse button block can be used to
+create some interactivity in your program. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732030390164543&run=True)
+
+![Cursor XY](./x_block.svg "Cursor x - Cursor y Block")
+
+The _Cursor x_ and _Cursor y_ blocks, also found on the _Sensors_ palette, return the X and Y coordinates of the cursor. These blocks can also be used to create interactive programs.
+
+![alt tag](./input_block.svg "Input Block")
+
+Prompting the user for input is done with the _Input_ block. This
+block will display a message with a prompt and open an input form at
+the current position of the mouse. Program execution is paused until
+the user types into the form and types RETURN (or Enter). The contents
+of the input form are then transferred to _Input-value_ block. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732171497274793&run=True)
+
+![Push](./push_block.svg "Push Block")
+
+![Pop](./pop_block.svg "Pop Block")
+
+The _Push_ and _Pop_ blocks, found on the _Heap_ palette, are used to
+store and retrieve values on/from a first-in, last-out (FILO) programx
+heap. There is a separate heap maintained for each _Start_ block. <!-- [RUN LIVE]() -->
+
+![Get Value](./getDict_block.svg "Get value Block")
+
+![Set Value](./setDict_block.svg "Set value Block")
+
+The _Get value_ and _Set value_ blocks are found on the _Dictionary_
+palette. They are used to get and set values in a dictionary
+object. You can have as many key/value pairs as you'd like in the
+dictionary and you can have as many dictionaries as you'd like as
+well. There is also a built-in dictionary associated with each _Start_
+block that has key/value pairs for parameters such as x, y, heading,
+color, shade, grey, pen size, notes played, current pitch, pitch
+number, and note value. <!-- [RUN LIVE]() -->
+
+![Print](./print_block.svg "Print Block")
+
+The _Print_ block, found on the _Extras_ palette, is used to print
+messages during program execution. It is very useful as a debugging
+tool and also as a means of adding lyrics to your music&mdash;think
+karaoke. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732172483377262&run=True)
+
+## 6. Flow Palette
+
+[Back to Table of Contents](#table-of-contents)
+
+The Flow palette is described in more detail in the [Turtle Blocks
+documentation](http://github.com/sugarlabs/turtleblocksjs/tree/master/documentation). Here we review a few ways to approach taking different
+actions on different beats.
+
+The _Switch_ block will take the action defined in the _Case_ that
+matches the argument passed to the _Switch_ block. In the figure
+below, it will take a different action based on the beat value: "on
+case 1 run action1", "on case 2, run action2", ..., "on case 4 run
+action4". You can also define a default action. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732173207750796&run=True)
+
+![Switch](./switch-on-beat.svg "Switch on Beat")
+
+![Switch](./switch-actions.svg "Switch actions")
+
+Another way to do the same thing is with the _Do_ block found on the
+Action palette. In the figure below, we add the beat count to "action"
+to create a series of strings: "action1", "action2", ...,
+"action4". We then "do" that action. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732830205442211&run=True)
+
+![Do](./do-actions.svg "Do actions")
+
+## 7. Widget Palette
+
+[Back to Table of Contents](#table-of-contents)
+
+Music Blocks has various Widgets that can be used within Music Blocks
+to enhance your experience. The _Pitch-time matrix_ is described here.
+
+![Matrix](./widget.png "The Phrase Maker")
+
+Many of the blocks on this palette are used to create a matrix of
+"pitch" and "note value". The matrix is a convenient and intuitive way
+for generating short musical gestures, which can be regenerated as a
+"chunk of notes" that can be played back programmatically. Musicians
+may find it helpful to think of the pitches within the pitch-time
+matrix as being akin to a bellset in which notes may be added and
+removed as desired. The "note value" representation acts as a
+"rhythmic tablature" that should be readable by both those familiar
+with the concepts of rhythm in music and those unfamiliar (but
+familiar with math).
+
+![Matrix](./matrix_block.svg "Pitch-time Matrix blocks")
+
+_Pitch-time Matrix_ blocks clamp is used to define the matrix:
+A row in the matrix is created for each _Pitch_ block and columns are
+created for individual notes, which are created by using _Rhythm_
+blocks, individual note blocks, or the _Tuplet_ block. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732180386380311&run=True)
+
+![Rhythm](./rhythmruler2_block.svg "Rhythm block")
+
+The _Rhythm_ block is used to specify a series of notes of the same
+duration (e.g., three quarter notes or seven eighth notes). The number
+of notes is the top argument; the bottom argument is the the note
+duration, e.g., `1/1` for a whole note, `1/2` for a half note, `1/4`
+for a quarter note, etc. (Recall that in traditional Western notation
+all note values are (1) in powers of two, and are (2) in relation to
+the "whole note", which is in turn (3) defined by tempo, or
+beats&mdash;usually quarter notes&mdash;per minute) Each note is
+represented by a column in the matrix. <!-- [RUN LIVE]() -->
+
+Special ratios of the whole note can be created very easily with the
+_Rhythm_ block by choosing an integer other than the traditional
+"powers of two" that standard Western music notation affords us. For
+example, putting a `1/5` into the argument for "note value" will
+create a note value equal to "one fifth the durational length of a
+whole note". This gives the user endless rhythmic possibilities.
+
+As a convenience, blocks for the most common note values are also
+provided (whole note through 64th note). They are automatically
+converted into the corresponding _Rhythm_ blocks, which can be used to
+create columns in the matrix.
+
+If you would like multiple note values in a row, simply use the
+_Repeat_ block clamp or _Duplicate_ block clamp.
+
+![Tuplet](./tuplet4_block.svg "Simple Tuplet clamp block")
+
+The _Tuplet_ block is how we create rhythms that do not fit into a
+simple "power of two" rhythmic space. A tuplet, mathematically, is a
+collection of notes that are scaled to map into a specified
+duration. For example, if you would like to script/perform three
+unique notes into the duration of a single quarter note you would use
+the tuplet block. The _Tuplet_ block is able to calculate how many
+notes you have inserted into the clamp and will generate the tuplet
+accordingly (e.g. if you put three notes in, it will generate a
+"triplet". We have designed the tuplet block to allow for any input of
+note value, so the triplet can be three quarter notes, three eighth
+notes, etc. This design choice allows for maximum flexibility) You can
+mix and match _Rhythm_ and individual _Note_ blocks within a _Tuplet_
+block to generate complex rhythms (e.g. two quarter notes plus an
+eighth note is possible within the tuplet). Each note is represented
+by a column in the matrix. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732191858479236&run=True)
+
+Note: Each time you open the matrix, it tries to reconstruct the notes
+marked from the previous matrix. If you modify the _Pitch_ and
+_Rhythm_ blocks in the _Pitch-time Matrix_ clamp, Music Blocks will
+try to make a corresponding change in the matrix.
+
+Note: You can construct a matrix from a chuck of blocks by including
+the chunk in the clamp of the _Pitch-time Marix_ block.
+
+More details about all of the widgets are available in the
+[Music Blocks Programming Guide](http://github.com/sugarlabs/musicblocks/tree/master/guide/README.md).
+
+## 8. Stats
+
+[Back to Table of Contents](#table-of-contents)
+
+Project statistics are available from a button on the secondary
+toolbar in advanced mode.
+
+![Stats](./stats.svg "Stats Details")
+
+## 9. Planet View
+
+[Back to Table of Contents](#table-of-contents)
+
+Music Blocks also provides a Planet view to find and share
+projects. It has options to load project from file locally and make
+new projects from scratch.
+
+![Planet](./planet_view_icon.png "Planet button")
+
+There are LOCAL and GLOBAL options to choose from. LOCAL lists the
+projects saved on your local machine. GLOBAL lets you explore projects
+shared by the community. You can filter these projects by tags such as
+Art, Math, Interactive, Design, Game, etc.
+
+Projects are shown with a thumbnail image and a title. To get more
+details, click on thumbnail image. A short description is provided.
+
+You can open a project in Music Blocks directly from the Planet or you
+can download.
+
+![Planet](./planet-3.png)
+
+![Planet](./planet-4.png)
+
+[Back to Table of Contents](#table-of-contents)
+
 # Guide to Programming with Music Blocks
 
 Music Blocks is a programming environment for children interested in
@@ -2765,3 +3419,857 @@ Looking for a block? The tables below (one for beginner mode and one for advance
 |               |        custom mode         |
 
 [Back to Table of Contents](#table-of-contents)
+
+# Debugging in Music Blocks
+
+_Learning is hard fun._&mdash;Marvin Minsky
+
+_Make the complicated comprehensible_&mdash;Arthur Miller
+
+_Debugging is the learning opportunity of the 21st Century._ &mdash;
+Cynthia Solomon
+
+_The important message that comes from ideas about debugging is that
+we learn from our mistakes; that the intricate process of making
+things work or learning new skills has to do with hypothesizing,
+testing, revising, etc._&mdash;Cynthia Solomon
+
+_Sometimes bugs are serendipitously adopted as features worth
+perpetuating, sometimes procedures must be constructed to deal with
+the phenomena caused by their appearance, and sometimes the bugs and
+their side effects need to be removed. But in this pursuit, children
+become creative researchers studying behavior, making up theories,
+trying out ideas, etc._&mdash;Cynthia Solomon
+
+_6 Stages of Debugging_&mdash;Anonymous
+
+1. That can't happen.
+2. That doesn't happen on my machine.
+3. That shouldn't happen.
+4. Why does that happen?
+5. Oh, I see.
+6. How did that ever work?
+
+---
+
+Programming is hard. Composing music is also hard. Both programming
+and composing involve some trial and error and serendipity. Inevitably
+you will make mistakes along the way. Music Blocks provides a number
+of mechanisms, reviewed below, to help you explore ideas and find
+mistakes.
+
+## <a>TABLE OF CONTENTS</a>
+
+1. [Clicking on an Individual Stack of Blocks](#1-clicking-on-an-individual-stack-of-blocks)
+2. [Print and Comment Blocks](#2-print-and-comment-blocks)
+3. [Status Widget](#3-status-widget)
+4. [Playback Modes](#4-playback-modes)
+5. [Show and Hide blocks](#5-show-and-hide-blocks)
+6. [Browser Console](#6-browser-console)
+
+## <a>1. Clicking on an Individual Stack of Blocks</a>
+
+The _Play_ button (in top left corner) will run all of the _Start_
+blocks simultaneously. (Every Music Blocks project has at least one
+_Start_ block). But you can also run an individual stack of code by
+clicking on a stack. This lets you test and debug small sections of
+code, or, as in the example below, you can play a single voice by
+clicking on one of the _Start_ blocks or single phase by clicking on
+one of the _Action_ blocks. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732463245651983&run=True)
+
+![alt tag](https://github.com/sugarlabs/musicblocks/blob/master/images/startblocks_debug_guide.png "Start Blocks")
+
+## <a>2. Print and Comment Blocks</a>
+
+[Back to Table of Contents](#table-of-contents)
+
+The _Print_ block (found on the _Extras_ palette) can be used to print
+a message while running a program. It is useful to determine if a
+section of code is being executed when expected or if a box or
+parameter contains an expected value.
+
+![alt tag](https://github.com/sugarlabs/musicblocks/blob/master/images/print_example2_debug_guide.png "Print Block")
+
+The _Print_ block is used to display the number of whole notes played,
+in this case, `1/4 + 1/4 + 1/2`, which adds up to `1`, which is
+displayed at the top of the browser window. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732474452574359&run=True)
+
+The _Comment_ block (also found on the _Extras_ palette) is similar to
+the _Print_ block, except it only prints a message when the program is
+being run in _Playback Slow_ mode (See below). Comments are also
+written to the browser console. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732825564345176&run=True)
+
+![Comment Block](./images/Comment_block_DebuggingMd.svg "Comment Block")
+
+## <a>3. Status Widget</a>
+
+[Back to Table of Contents](#table-of-contents)
+
+![Status Widget Block](./images/Status_widget_debuggingMd.svg "Status Widget Block")
+
+![alt tag](https://github.com/sugarlabs/musicblocks/blob/master/images/status_example_debug_guide.png "Status in tabular form")
+
+The _Status widget_ is a tool for inspecting the status of Music
+Blocks as it is running. By default, the key, BPM, and volume are
+displayed. Also, each note is displayed as it is played. There is one
+row per voice in the status table. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732541757152077&run=True)
+
+Additional _Print_ blocks can be added to the _Status_ widget to
+display additional music factors, e.g., duplicate, transposition,
+skip, [staccato](#MORE-TRANSFORMATIONS),
+[slur](#MORE-TRANSFORMATIONS), and [graphics](#GRAPHICS) factors,
+e.g., x, y, heading, color, shade, grey, and pensize.
+
+![Additional Programming within the Status Widget Block](./images/Status_Widget_additional_programming_DebuggingMd.svg "Additional Programming within the Status Widget Block")
+
+You can do additional programming within the status block. In the
+example above, `whole notes played` is multiplied by `4` (e.g. quarter notes)
+before being displayed. [RUN LIVE](https://musicblocks.sugarlabs.org/index.html?id=1732553086132345&run=True)
+
+## <a>4. Playback Modes</a>
+
+[Back to Table of Contents](#table-of-contents)
+
+Clicking on the Play button will play your program at full speed.
+(It will also hide the blocks while the program runs, which improves
+performance.) But there are two other playback modes.
+
+On the Secondary Menu, there are two other Play buttons.
+
+During _Playback Slow_ mode the program will pause between the execution
+of each block and the block being executed will be highlighted. This is
+useful for following program flow, ensuring that the sequence of blocks
+being executed is what you expect. In addition, the value stored in any
+box or parameter is displayed on the block as the program runs, so you
+can "inspect" program elements as the program runs.
+
+_Run Step by Step_ advances one block per button press.
+
+## <a>5. Show and Hide blocks</a>
+
+[Back to Table of Contents](#table-of-contents)
+
+The _Show_ and _Hide_ blocks (found on the _Extras_ palette) are
+useful for setting
+"[breakpoints](https://en.wikipedia.org/wiki/Breakpoint)" in your
+program to debug a specific section of code. By putting a _Show_ block
+at the start of a problematic section of code and a _Hide_ block at
+the end of the section, your program can be run full speed until it
+gets to the _Show_ block. Then the blocks are displayed and
+run in _Playback Slow_ mode. When the _Hide_ block is encountered, the
+blocks are hidden and the program resumes running at full speed.
+
+## <a>6. Browser Console</a>
+
+As Music Blocks runs, some debugging information is written to the
+browser console, such as the notes being played and comments (See the
+_Comment_ block above). The console can be accessed by typing
+`Ctrl-Shift-J` on most web browsers.
+
+![alt tag](https://github.com/sugarlabs/musicblocks/blob/master/images/browserconsole_debug_guide.png "Console blocks")
+
+Shown above is the console output from three notes: `sol mi sol`.
+
+[Back to Table of Contents](#table-of-contents)
+
+# Guide to Programming with Turtle Art
+
+Turtle Blocks expands upon what children can do with Logo and how it
+can be used as the underlying motivator for “improving” programming
+languages and programmable devices.
+
+In this guide, we illustrate this point by both walking the reader
+through numerous examples, but also by discussing some of our favorite
+explorations of Turtle Blocks, including multi-media, the Internet
+(both as a forum for collaboration and data collection), and a broad
+collection of sensors.
+
+## Getting Started
+
+Turtle Blocks Javascript is designed to run in a browser. Most of the
+development has been done in Chrome, but it should also work in
+Firefox. You can run it from a [server maintained by Sugar
+Labs](http://turtle.sugarlabs.org), from the [github
+repo](http://sugarlabs.github.io/turtleblocksjs), or by setting up a
+[local
+server](https://github.com/sugarlabs/turtleblocksjs/blob/master/server.md).
+
+You can also open it directly from `file://` with some browsers, e.g.,
+FireFox.
+
+Once you've launched it in your browser, start by clicking on (or
+dragging) blocks from the _Turtle_ palette. Use multiple blocks to
+create drawings; as the turtle moves under your control, colorful
+lines are drawn.
+
+You add blocks to your program by clicking on or dragging them from
+the palette to the main area. You can delete a block by dragging it
+back onto the palette. Click anywhere on a "stack" of blocks to start
+executing that stack or by clicking in the _Rabbit_ (fast) or _Turtle_
+(slow) on the Main Toolbar. The _Snail_ will step through your
+program, one block per click.
+
+For more details on how to use Turtle Blocks JS, see [Using Turtle
+Blocks
+JS](http://github.com/sugarlabs/turtleblocksjs/tree/master/documentation)
+for more details.
+
+## ABOUT THIS GUIDE
+
+Many of the examples given in the guide have links to code you can
+run. Look for RUN LIVE links that will take you to
+http://turtle.sugarlabs.org.
+
+## TO SQUARE
+
+The traditional introduction to Logo has been to draw a square. Often
+times when running a workshop, I have the learners form a circle
+around one volunteer, the "turtle", and invite them to instruct the
+turtle to draw a square. (I coach the volunteer beforehand to take
+every command literally, as does our graphical turtle.) Eventually the
+group converges on "go forward some number of steps", "turn right (or
+left) 90 degrees", "go forward some number of steps", "turn right (or
+left) 90 degrees", "go forward some number of steps", "turn right (or
+left) 90 degrees", "go forward some number of steps". It is only on
+rare occasions that the group includes a final "turn right (or left)
+90 degrees" in order to return the turtle to its original
+orientation. At this point I introduce the concept of "repeat" and
+then we start in with programming with Turtle Blocks.
+
+## I. Turtle Basics
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics1.svg' />
+
+A single line of length 100 [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523359934621848&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics2.svg' />
+
+Changing the line length to 200 [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523360071975585&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics3.svg' />
+
+Adding a right turn of 90 degrees. Running this stack four times
+produces a square. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523360268417654&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics4.svg' />
+
+Forward, right, forward, right, ... [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523360327901636&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics5.svg' />
+
+Using the _Repeat_ block from the _Flow_ palette [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523294074349148&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics6.svg' />
+
+Using the _Arc_ block to make rounded corners [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523360547665676&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics7.svg' />
+
+Using the _Fill_ blocks from the Pen palette to make a solid square
+(what ever is drawn inside the _Fill_ clamp will be filled upon
+exiting the clamp.) [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523360674936456&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics8.svg' />
+
+Changing the color to 70 (blue) using the _Set Color_ block from the
+_Pen_ palette [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523360821674406&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/basics9.svg' />
+
+Using the _Random_ block from the _Numbers_ palette to select a random
+color (0 to 100) [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523360917773878&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/background.svg' />
+
+Use the _Background_ block to set the background color to the current
+pen color. Note that if you do not subsequently change the pen color
+after you set the background, you will not be able to see what you are
+drawing as your "ink" will be the same color as your "paper". [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1581264197757866&run=True)
+
+## A SHOEBOX
+
+When explaining boxes in workshops, I often use a shoebox. I have
+someone write a number on a piece of paper and put it in the
+shoebox. I then ask repeatedly, "What is the number in the box?" Once
+it is clear that we can reference the number in the shoebox, I have
+someone put a different number in the shoebox. Again I ask, "What is
+the number in the box?" The power of the box is that you can refer to
+it multiple times from multiple places in your program.
+
+## II. Boxes
+
+Boxes let you store an object, e.g., a number, and then refer to the
+object by using the name of the box. (Whenever you name a box, a new
+block is created on the Boxes palette that lets you access the content
+of the box.) This is used in a trivial way in the first example below:
+putting 100 in the box and then referencing the box from the Forward
+block. In the second example, we increase the value of the number
+stored in the box so each time the box is referenced by the Forward
+block, the value is larger.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/boxes1.svg' />
+
+Putting a value in a _Box_ and then referring to the value in _Box_
+[RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523361053378823&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/boxes2.svg' />
+
+We can change the value in a _Box_ as the program runs. Here we add 10
+to the value in the _Box_ with each iteration. The result in this case
+is a spiral, since the turtle goes forward further with each
+step. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523361248940557&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/boxes3.svg' />
+
+If we want to make a more complex change, we can store in the _Box_ some
+computed value based on the current content of the _Box_. Here we
+multiply the content of the box by 1.2 and store the result in the
+_Box_. The result in this case is also a spiral, but one that grows
+geometrically instead of arithmetically.
+
+In practice, the use of boxes is not unlike the use of keyword-value
+pairs in text-based programming languages. The keyword is the name of
+the _Box_ and the value associated with the keyword is the value
+stored in the _Box_. You can have as many boxes as you'd like (until
+you run out of memory) and treat the boxes as if they were a
+dictionary. Note that the boxes are global, meaning all turtles and
+all action stacks share the same collection of boxes. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523368886737682&run=True)
+
+## III. Action Stacks
+
+With Turtle Blocks there is an opportunity for the learner to expand
+upon the language, taking the conversation in directions unanticipated
+by the Turtle Block developers.
+
+_Action_ stacks let you extend the Turtle Blocks language by defining
+new blocks. For example, if you draw lots of squares, you may want a
+block to draw squares. In the examples below, we define an action
+that draws a square (repeat 4 forward 100 right 90), which in turn
+results in a new block on the _Actions_ palette that we can use whenever
+we want to draw a square. Every new _Action_ stack results in a new
+block.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/actions1.svg' />
+
+Defining an action to create a new block, "_Square_" [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523369101107025&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/actions2.svg' />
+
+Using the "_Square_" block [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523369182696942&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/actions3.svg' />
+
+The _Do_ block lets you specify an action by name. In this example, we
+choose "one of" two names, "_Square_" and "_Triangle_" to determine which
+action to take. [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523369272178072&run=True)
+
+## IV. Parameters
+
+Parameter blocks hold a value that represents the state of some turtle
+attribute, e.g., the x or y position of the turtle, the heading of the
+turtle, the color of the pen, the size of the pen, etc. You can use
+parameter blocks interchangeably with number blocks. You can change
+their values with the _Add_ block or with the corresponding set blocks.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/parameters1.svg' />
+
+Using the _Heading_ parameter, which changes each time the turtle
+changes direction, to change the color of a spiral [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523369515049913&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/parameters2.svg' />
+
+"Squiral" by Brian Silverman uses the _Heading_ and _X_ parameter
+blocks. [RUN
+LIVE](https://walterbender.github.io/musicblocks/index.html?id=1523410445476847&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/parameters3.svg' />
+
+Often you want to just increment a parameter by 1. For this, use the
+_Add-1-to_ block. [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523369660208921&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/parameters4.svg' />
+
+To increment (or decrement) a parameter by an arbitrary value, use the
+_Add-to_ block. [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523370184642548&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/parameters5.svg' />
+
+To make other changes to a parameter based on the current value, use
+the parameter's _Set_ block. In this example, the pen size is doubled
+with each step in the iteration. [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523370273985275&run=True)
+
+## V. Conditionals
+
+Conditionals are a powerful tool in computing. They let your program
+behave differently under differing circumstances. The basic idea is
+that if a condition is true, then take some action. Variants include
+if-then-else, while, until, and forever. Turtle Blocks provides
+logical constructs such as equal, greater than, less than, and, or,
+and not.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/conditionals1.svg' />
+
+Using a conditional to select a color: Once the heading > 179, the
+color changes. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523370501577900&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/conditionals2.svg' />
+
+Conditionals along with the _Random_ block can be used to simulate a
+coin toss. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523370743897698&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/conditionals3.svg' />
+
+A coin toss is such a common operation that we added the _One-of_ block
+as a convenience. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523370862902481&run=True)
+
+## VI. Multimedia
+
+Turtle Blocks provides rich-media tools that enable the incorporation
+of sound, typography, images, and video.
+
+At the heart of the multimedia extensions is the _Show_ block. It can be
+used to show text, image data from the web or the local file system,
+or a web camera. Other extensions include blocks for synthetic speech,
+tone generation, and video playback.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/media1.svg' />
+
+Using the _Show_ block to display text; the orientation of the text
+matches the orientation of the turtle. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523370990567304&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/media2.svg' />
+
+You can also use the _Show_ block to show images. Clicking on the Image
+block (left) will open a file browser. After selecting an image file
+(PNG, JPG, SVG, etc.) a thumbnail will appear on the _Image_ block
+(right).
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/media3.svg' />
+
+The _Show_ block in combination with the _Camera_ block will capture and
+display an image from a webcam. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523371139976408&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/media4.svg' />
+
+The _Show_ block can also be used in conjunction with a URL that
+points to media. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523371406381048&run=True)
+
+## VII. Sensors
+
+Seymour Papert’s idea of learning through making is well supported in
+Turtle Blocks. According to Papert, “learning happens especially
+felicitously in a context where the learner is consciously engaged in
+constructing a public entity, whether it’s a sand castle on the beach
+or a theory of the universe”. Research and development that supports
+and demonstrates the children’s learning benefits as they interact
+with the physical world continues to grow. In similar ways, children
+can communicate with the physical world using a variety of sensors in
+Turtle Blocks. Sensor blocks include keyboard input, sound, time,
+camera, mouse location, color that the turtle sees. For example,
+children may want to build a burglar alarm and save photos of the
+thief to a file. Turtle Blocks also makes it possible to save and
+restore sensor data from a file. Children may use a “URL” block to
+import data from a web page.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/sensors1.svg' />
+
+Using sensors. The _Loudness_ block is used to determine if there is an
+intruder. A loud sound triggers the alarm action: the turtle shouts
+“intruder” and takes a picture of the intruder.
+
+Teachers from the Sugar community have developed extensive collection
+of examples using Turtle Block sensors. Guzmán Trinidad, a physics
+teacher from Uruguay, wrote a book, _Physics of the XO_, which includes
+a wide variety of sensors and experiments. Tony Forster, an engineer
+from Australia, has also made remarkable contributions to the
+community by documenting examples using Turtle Blocks. In one example,
+Tony uses the series of switches to measure gravitational
+acceleration; a ball rolling down a ramp trips the switches in
+sequence. Examining the time between switch events can be used to
+determine the gravitational constant.
+
+One of the typical challenges of using sensors is calibration. This is
+true as well in Turtle Blocks. The typical project life-cycle
+includes: (1) reading values; (2) plotting values as they change over
+time; (3) finding minimum and maximum values; and finally (4)
+incorporating the sensor block in a Turtle program.
+
+## Example: Paint
+
+As described in the Sensors section, Turtle Blocks enables the
+programmer/artist to incorporate sensors into their work. Among the
+sensors available are the mouse button and mouse x and y
+position. These can be used to create a simple paint program, as
+illustrated below. Writing your own paint program is empowering: it
+demystifies a commonly used tool. At the same time, it places the
+burden of responsibility on the programmer: once we write it, it
+belongs to us, and we are responsible for making it cool. Some
+variations of paint are also shown below, including using microphone
+levels to vary the pen size as ambient sound-levels change. Once
+learners realize that they can make changes to the behavior of their
+paint program, they become deeply engaged. How will you modify paint?
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/paint1.svg' />
+
+In its simplest form, paint is just a matter of moving the turtle to
+wherever the mouse is positioned. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523371509276932&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/paint2.svg' />
+
+Adding a test for the mouse button lets us move the turtle without
+leaving a trail of ink. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523371673939089&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/paint3.svg' />
+
+In this example, we change the pen size based on the volume of
+microphone input. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523371754657228&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/paint4.svg' />
+
+In another example, inspired by a student in a workshop in Colombia,
+we use time to change both the pen color and the pen size. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523371935195761&run=True)
+
+## Example: Slide Show
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/slideshow1.svg' />
+
+Why use Powerpoint when you can write Powerpoint? In this example, an
+Action stack is used to detect keyboard input: if the keyboard value
+is zero, then no key has been pressed, so we call the action again. If
+a key is pressed, the keyboard value is greater than zero, so we
+return from the action and show the next image.
+
+## Example: Keyboard
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/keyboard.svg' />
+
+In order to grab keycodes from the keyboard, you need to use a _While_
+block. In the above example, we store the keyboard value in a box,
+test it, and if it is > 0, return the value. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523376704342158&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/keyboard2.svg' />
+
+If you want to convert the keycode to a alphanumeric character, you
+need to use the _To ASCII_ block. E.g., _toASCII(65) = A_ [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523377042822413&run=True)
+
+## VIII. Turtles, Sprites, Buttons, and Events
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/turtles1.svg' />
+
+A separate turtle is created for each _Start_ block. The turtles run
+their code in parallel with each other whenever the _Run_ button is
+clicked. Each turtle maintains its own set of parameters for position,
+color, pen size, pen state, etc. In this example, three different
+turtles draw three different shapes. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523377203344616&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/turtles2.svg' />
+
+Custom graphics can be applied to the turtles, using the _Shell_ block
+on the _Media_ palette. Thus you can treat turtles as sprites that can
+be moved around the screen. In this example, the sprite changes back
+and forth between two states as it moves across the screen. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523377357693679&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/turtles3.svg' />
+
+Turtles can be programmed to respond to a "click" event, so they can
+be used as buttons. In this example, each time the turtle is clicked,
+the action is run, which move the turtle to a random location on the
+screen. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523377513682595&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/turtles4.svg' />
+
+Events can be broadcast as well. In this example, another variant on
+Paint, turtle "buttons", which listen for "click" events, are used to
+broadcast change-color events. The turtle used as the paintbrush is
+listening for these events. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523378142359724&run=True)
+
+## IX. Advanced Actions
+
+Sometime you might want an action to not just run a stack of blocks
+but also to return a value. This is the role of the return block. If
+you put a return block into a stack, then the action stack becomes a
+calculate stack.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/actions4.svg' />
+
+In this example, a _Calculate_ stack is used to return the current
+distance of the turtle from the center of the screen. Renaming an
+action stack that has a _Return_ block will cause the creation of a new
+block in the _Actions_ palette that can be used to reference the return
+value: in this case, a _Distance_ block is created. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523383380320451&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/actions6.svg' />
+
+You can also pass arguments to an _Action_ stack. In this example, we
+calculate the distance between the turtle and an arbitrary point on
+the screen by passing x and y coordinates in the _Calculate_
+block. You add additional arguments by dragging them into the "clamp".
+
+Note that args are local to _Action_ stacks, but boxes are not. If you
+planned to use an action in a recursive function, you had best avoid
+boxes. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523382801625028&run=True)
+
+## Example: Fibonacci
+
+Calculating the Fibonacci sequence is often done using a recursive
+method. In the example below, we pass an argument to the _Fib_ action,
+which returns a value if the argument is &lt; 2; otherwise it returns
+the sum of the result of calling the _Fib_ action with argument - 1 and
+argument - 2.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/fibonacci1.svg' />
+
+Calculating Fibonacci [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523388667520324&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/fibonacci2.svg' />
+
+In the second example, we use a _Repeat_ loop to generate the first six
+Fibonacci numbers and use them to draw a nautilus.
+
+Draw a nautilus [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523388775236172&run=True)
+
+## Example: Reflection Paint
+
+By combining multiple turtles and passing arguments to actions, we can
+have some more fun with paint. In the example below, the _Paint Action_
+uses _Arg 1_ and _Arg 2_ to reflect the mouse coordinates about the y and
+x axes. The result is that the painting is reflected into all four
+quadrants.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/turtles5.svg' />
+
+Reflection Paint [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523389168734406&run=True)
+
+## X. Advanced Boxes
+
+Sometimes it is more convenient to compute the name of a _Box_ than to
+specify it explicitly. (Note that the _Do_ block affords a similar
+mechanism for computing the names of actions.)
+
+In the following examples, we use this to accumulate the results of
+toss a pair of dice 1600 times (example inspired by Tony Forster).
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/boxes4.svg' />
+
+Rather than specifying a box to hold each possible result (2 through
+12), we use a _Box_ as a counter (index) and create a box with the name
+of the current value in the counter and store in that box a value of 0.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/boxes5.svg' />
+
+Next we add an _Action_ to toss the dice 1600 times. To simulate tossing
+a pair of dice, we sum two random numbers between 1 and 6. We use the
+result as the name of the box we want to increment. So for example, if
+we throw a 7, we add one to the _Box_ named 7. In this way we increment
+the value in the appropriate _Box_.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/boxes6.svg' />
+
+Finally, we plot the results. Again, we use a _Box_ as a counter ("index")
+and call the _Plot Action_ in a loop. In the _Bar Action_, we draw a
+rectangle of length value stored in the _Box_ with the name of the
+current value of the index. E.g., when the value in the index _Box_ equals
+2, the turtle goes forward by the value in _Box 2_, which is the
+accumulated number of times that the dice toss resulted in a 2; when
+the value in the _Index Box_ is 3, the turtle goes forward by the value
+in _Box 3_, which is the accumulated number of times that the dice toss
+resulted in a 3; etc. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523299313972510&run=True)
+
+## XI. The Heap
+
+Sometimes you need a place to temporarily store data. One way to do it
+is with boxes (as mentioned at the end of the Boxes section of this
+guide, they can be used as a dictionary or individual keyword-value
+pairs). However, sometimes it is nice to simply use a heap.
+
+A heap is a essential a pile. The first thing you put on the heap is
+on the bottom. The last thing you put on the heap is on the top. You
+put things onto the heap using the _Push_ block. You take things off of
+the heap using the _Pop_ block. In Turtle Blocks, the heap is first-in
+last-out (FILO), so you pop things off of the heap in the reverse
+order in which you put them onto the heap.
+
+There is also an _Index_ block that lets you refer to an item in the
+heap by an index. This essentially lets you treat the heap as an
+array. Some other useful blocks include a block to empty the heap, a
+block that returns the length of the heap, a block that saves the heap
+to a file, and a block that loads the heap from a file.
+
+In the examples below we use the heap to store a drawing made with a
+paint program similar to the previous examples and then to playback
+the drawing by popping points off of the heap.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/heap1.svg' />
+
+In the first example, we simply push the turtle position whenever we
+draw, along with the pen state. Note since we pop in the reverse order
+that we push, we push y, then x, then the mouse state.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/heap2.svg' />
+
+In the second example, we pop pen state, x, and y off of the heap and
+playback our drawing. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523389420306919&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/heap3.svg' />
+
+Use the _Save Heap_ block to save the state of the heap to a file. In
+this example, we save our drawing to a file for playback later. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523390553182986&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/heap4.svg' />
+
+Use the _Load Heap_ block to load the heap from data saved in a
+file. In this example, we playback the drawing from data stored in a
+file. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523389601597904&run=True)
+
+## XII. Extras
+
+The _Extras_ palette is full of utilities that help you use your
+project's output in different ways.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/extras1.svg' />
+
+The _Save as SVG_ block will save your drawing as simple vector graphics
+(SVG), a format compatible with HTML5 and many image manipulation
+programs, e.g., Inkscape. In the example above, we use it to save a
+design in a from that can be converted to STL, a common file format
+used by 3D printers. A few things to take note of: (1) the _No
+Background_ block is used to suppress the inclusion of the background
+fill in the SVG output; (2) _Hollow lines_ are used to make graphic have
+dimension; and (3) the _Save as SVG_ block writes to the Downloads
+directory on your computer. (Josh Burker introduced me to Tinkercad, a
+website that can be used to convert SVG to STL.) [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523390883477748&run=True)
+
+The _New Turtle_ block is used to create new turtles on the fly. The
+_Set Turtle_ block is used to run blocks by a selected turtle. In the
+example below, 10 turtles are created on the fly and each turtle is
+then set on a random walk across the screen. Note that the _Found
+Turtle_ block is used to ensure that the each new turtle is _ready_
+before issuing commands. (Creating a turtle is not instantaneous and
+the _New Turtle_ block does not block program flow waiting for the
+turtle to be created.) [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1525211505767290&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/extras2.svg' />
+
+An alternative to using the _Found Turtle_ block is to use the _Event_ block. When a new turtle is created, an event with the name of the turtle is broadcast (See the example below).
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/extras3.svg' />
+
+## XIII. Debugging Aids
+
+Probably the most oft-used debugging aid in any language is the print
+statement. In Turtle Blocks, it is also quite useful. You can use it
+to examine the value of parameters and variables (boxes) and to
+monitor progress through a program.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/debugging1.svg' />
+
+In this example, we use the addition operator to concatinate strings
+in a print statement. The mouse x + ", " + mouse y are printed in the
+inner loop. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523391206069261&run=True)
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/status1.svg' />
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/status2.svg' />
+
+There is also a _Status_ widget that can be programmed to show various
+paramters as per the figures above. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1528388082677564&run=True)
+
+Parameter blocks, boxes, arithmetic and boolean operators, and many
+sensor blocks will print their current value as the program runs when
+running in "slow" or "step-by-step" mode, obviating the need to use
+the Print block in many situations.
+
+The _Wait_ block will pause program execution for some number (or
+fractions) of seconds.
+
+The _Hide_ and _Show_ blocks can be used to set "break points". When a
+_Hide_ block is encountered, the blocks are hidden and the program
+proceeds at full speed. When a _Show_ block is encountered, the program
+proceeds at a slower pace an the block values are shown.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/debugging2.svg' />
+
+A _Show_ block is used to slow down execution of the code in an _Action_
+stack in order to facilitate debugging. In this case, we slow down
+during playback in order to watch the values popped off the heap. [RUN
+LIVE](https://turtle.sugarlabs.org/index.html?id=1523391034295213&run=True)
+
+## XIV. Advanced Color
+
+The internal representation of color in Turtle Blocks is based on the
+[Munsell color
+system](http://en.wikipedia.org/wiki/Munsell_color_system). It is a
+three-dimensional system: (1) hue (red, yellow, green, blue, and
+purple), (2) value (black to white), and (3) chroma (gray to vivid).
+
+There are parameters for each color dimension and corresponding
+"setters". All three dimensions have been normalized to run from 0 to 100. For Hue, 0 maps to Munsell 0R. For Value, 0 maps to Munsell value
+0 (black) and 100 maps to Munsell value 10 (white). For chroma, 0 maps
+to Munsell chroma 0 (gray) and 100 maps to Munsell chroma 26 (spectral
+color).
+
+A note about Chroma: In the Munsell system, the maximum chroma of
+each hue varies with value. To simplify the model, if the chroma
+specified is greater than the maximum chroma available for a hue/value
+pair, the maximum chroma available is used.
+
+The _Set Color_ block maps the three dimensions of the Munsell color
+space into one dimension. It always returns the maximum value/chroma
+pair for a given hue, ensuring vivid colors. If you want to more
+subtle colors, be sure to use the _Set Hue_ block rather than the _Set
+Color_ block.
+
+<img src='https://rawgithub.com/sugarlabs/turtleblocksjs/master/guide/color1.svg' />
+
+Color vs. hue example [RUN LIVE](https://turtle.sugarlabs.org/index.html?id=1523391601724568&run=True)
+
+To set the background color, use the _Background_ block. It will set the
+background to the current hue/value/chroma triplet.
+
+## XV. Plugins
+
+There are a growing number of extensions to Turtle Blocks in the from
+of plugins. See
+[Plugins](http://github.com/sugarlabs/turtleblocksjs/tree/master/plugins)
+for more details.
