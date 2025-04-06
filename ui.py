@@ -84,6 +84,30 @@ def apply_styling():
             background-color: #3a3a3a;
             color: #ffffff;
         }
+        .upload-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .upload-text {
+            color: #4caf50;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+        .stFileUploader > div {
+            padding: 0 !important;
+        }
+        .upload-icon {
+            color: #4caf50;
+            font-size: 24px;
+            background-color: #3a3a3a;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #4caf50;
+            cursor: pointer;
+            display: inline-block;
+            margin-left: 10px;
+        }
     </style>
     """, unsafe_allow_html=True)
 
@@ -103,11 +127,15 @@ def show_about():
         st.markdown("""
         **Music Blocks Assistant** helps you:
         
-        * Learn about music concepts
-        * Generate music lesson plans
-        * Explore musical topics
+        * Learn about music concepts and programming
+        * Generate detailed music lesson plans.
+        * Get teaching resources and curriculum ideas
+        * Analyze music-related images - just attach an image to your question!
         
-        Try asking for a lesson plan or any questions about music!
+        **Try these examples:**
+        * "Generate a lesson plan for teaching rhythm to 4th graders"
+        * "What are the best ways to introduce programming with Music Blocks?"
+        * Upload an image of sheet music and ask "What's wrong with this notation?"
         """)
 
 def display_header():
@@ -124,5 +152,34 @@ def display_chat_history():
             st.markdown(message["content"])
 
 def get_user_input():
-    """Get user input from chat interface."""
-    return st.chat_input("Ask something about Music Blocks...")
+    """Get user input from chat interface with image upload option."""
+    input_container = st.container()
+    
+    with input_container:
+        prompt = st.chat_input("Ask something about Music Blocks...")
+        
+        upload_container = st.container()
+        with upload_container:
+            st.markdown("""
+            <div style="display: flex; align-items: center; width: 100%; margin-top: 5px; margin-bottom: 10px;">
+                <div style="color: #4caf50; font-size: 14px; display: flex; align-items: center; width: 100%;">
+                    <span style="margin-right: 5px;">📎</span> Attach an image for analysis
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            uploaded_image = st.file_uploader("", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+    
+    if uploaded_image is not None:
+        st.session_state.uploaded_image = uploaded_image
+        
+        st.markdown("---")
+        cols = st.columns([1, 3])
+        with cols[0]:
+            st.image(uploaded_image, width=100)
+        with cols[1]:
+            st.markdown("**Image uploaded!** Ask a question about it like:")
+            st.markdown("- *'What's wrong with this sheet music?'*")
+            st.markdown("- *'Can you analyze this instrument setup?'*")
+    
+    return prompt
