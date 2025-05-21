@@ -5,20 +5,15 @@ def apply_styling():
     st.markdown("""
     <style>
         body {
-            background: #2b2b2b; 
-            font-family: 'Arial', sans-serif;
         }
         .stApp {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #2b2b2b;
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-            color: #ffffff;
         }
         .st-expander {
-            background-color: #3a3a3a;
             border: 2px solid #4caf50;
             border-radius: 10px;
             padding: 10px;
@@ -26,7 +21,6 @@ def apply_styling():
         .st-expander-header {
             font-size: 18px;
             font-weight: bold;
-            color: #4caf50;
         }
         .chat-message {
             padding: 1rem;
@@ -34,16 +28,12 @@ def apply_styling():
             margin-bottom: 1rem;
             display: flex;
             align-items: flex-start;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         .chat-message.user {
-            background-color: #4caf50;
-            color: #ffffff;
             border: 2px solid #388e3c;
         }
         .chat-message.bot {
-            background-color: #1e88e5;
-            color: #ffffff;
             border: 2px solid #1565c0;
         }
         .chat-message .avatar {
@@ -51,21 +41,17 @@ def apply_styling():
             height: 50px;
             border-radius: 50%;
             margin-right: 10px;
-            background-color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 20px;
             font-weight: bold;
-            color: #000000;
         }
         .chat-message .message {
             flex: 1;
             padding: 0 10px;
         }
         .stButton>button {
-            background-color: #4caf50;
-            color: white;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
@@ -81,8 +67,6 @@ def apply_styling():
             border-radius: 5px;
             padding: 10px;
             font-size: 16px;
-            background-color: #3a3a3a;
-            color: #ffffff;
         }
         .upload-container {
             display: flex;
@@ -90,7 +74,6 @@ def apply_styling():
             margin-top: 10px;
         }
         .upload-text {
-            color: #4caf50;
             font-size: 14px;
             margin-right: 5px;
         }
@@ -98,9 +81,7 @@ def apply_styling():
             padding: 0 !important;
         }
         .upload-icon {
-            color: #4caf50;
             font-size: 24px;
-            background-color: #3a3a3a;
             padding: 5px 10px;
             border-radius: 5px;
             border: 1px solid #4caf50;
